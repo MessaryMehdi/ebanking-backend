@@ -21,6 +21,7 @@ public abstract class BankAccount {
     private AccountStatus status;
     @ManyToOne
     private Customer customer;
+
     @OneToMany(mappedBy = "bankAccount",fetch = FetchType.LAZY) //LAZY quand on veut charger un compte il ne va ramener que les informations sur le compte mais il ne va pas charger en memoire la liste des operations de ce compte
     private List<AccountOperation> accountOperations;
 
